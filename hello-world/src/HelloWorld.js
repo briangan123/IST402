@@ -25,7 +25,7 @@ export class HelloWorld extends LitElement {
   }
 
   __increment() {
-    this.counter += 1;
+    this.counter += 5;
   }
 
   render() {
