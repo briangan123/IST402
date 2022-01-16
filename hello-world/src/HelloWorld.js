@@ -4,24 +4,28 @@ export class HelloWorld extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: block;
-        padding: 25px;
+        display: inline-block;
+        padding: 10px;
+        background: lightgray;
         color: var(--hello-world-text-color, #000);
+      }
+      .planet {
+        color: var (--planet-color, blue);
       }
     `;
   }
 
   static get properties() {
     return {
-      title: { type: String },
-      counter: { type: Number },
+      greeting: { type: String },
+      planet: { type: String },
     };
   }
 
   constructor() {
     super();
-    this.title = 'Hey there';
-    this.counter = 5;
+    this.greeting = 'Hello';
+    this.planet = 'World';
   }
 
   __increment() {
