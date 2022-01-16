@@ -4,41 +4,34 @@ export class HelloWorld extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: inline-block;
-        padding: 10px;
-        background: lightgray;
+        display: block;
+        padding: 25px;
         color: var(--hello-world-text-color, #000);
-      }
-      .planet {
-        color: var (--planet-color, blue);
       }
     `;
   }
 
   static get properties() {
     return {
-      greeting: { type: String },
-      planet: { type: String },
+      title: { type: String },
+      counter: { type: Number },
     };
   }
 
   constructor() {
     super();
-    this.greeting = 'Hello';
-    this.planet = 'World';
+    this.title = 'Hey there';
+    this.counter = 5;
+  }
+
+  __increment() {
+    this.counter += 1;
   }
 
   render() {
     return html`
-      <span @click=${this.togglePlanet} @keypress=${this.togglePlanet}
-        >${this.greeting}
-        <span class="planet">${this.planet}</span>
-  </span>
+      <h2>${this.title} Nr. ${this.counter}!</h2>
+      <button @click=${this.__increment}>increment</button>
     `;
   }
-
-  togglePlanet() {
-    this.planet = this.planet === 'World' ? 'Mars' : 'World';
-  }
 }
-customElements.define('hello-world', HelloWorld);
