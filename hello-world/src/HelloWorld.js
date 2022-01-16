@@ -30,10 +30,10 @@ export class HelloWorld extends LitElement {
 
   render() {
     return html`
-      <span @click=${this.togglePlanet}
+      <span @click=${this.togglePlanet} @keypress=${this.togglePlanet}
         >${this.greeting}
         <span class="planet">${this.planet}</span>
-      </span>
+  </span>
     `;
   }
 
