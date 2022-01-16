@@ -28,14 +28,17 @@ export class HelloWorld extends LitElement {
     this.planet = 'World';
   }
 
-  __increment() {
-    this.counter += 5;
-  }
-
   render() {
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
+      <span @click=${this.togglePlanet}
+        >${this.greeting}
+        <span class="planet">${this.planet}</span>
+      </span>
     `;
   }
+
+  togglePlanet() {
+    this.planet = this.planet === 'World' ? 'Mars' : 'World';
+  }
 }
+customElements.define('hello-world', HelloWorld);
