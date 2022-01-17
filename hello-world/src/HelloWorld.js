@@ -33,7 +33,7 @@ export class HelloWorld extends LitElement {
     this.counter += 1;
   }
 
-  // this method prints the heading and counter onto the website. It also listens for an event, which in this case, is a button click. After a button is pressed, it calls the increment method.
+  // this method prints the heading and counter onto the website. It also listens for an event, which in this case, is a button click. After the button named "increment" is pressed, it calls the increment method.
   render() {
     return html`
       <h2>${this.title} Nr. ${this.counter}!</h2> 
